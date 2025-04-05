@@ -60,7 +60,7 @@ public class CarController : MonoBehaviour
         //player input shoud deteriorate if no input is given, so we will set the acceleration input to 0 if it is less than 0.1f, this will make the car slow down if no input is given.
         if (MathF.Abs(acceleration) < 0.1f)
         {
-            brake = 1f;
+            brake = .5f;
 
         }else if (rb.velocity.magnitude > 0.25f && Vector3.Dot(rb.velocity, transform.forward * acceleration) < 0f)
         {
@@ -171,6 +171,6 @@ public class CarController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         // Set the center of mass of the car to be lower for better stability
-        rb.centerOfMass = centerOfMassOffset;
+        rb.centerOfMass += centerOfMassOffset;
     }
 }
