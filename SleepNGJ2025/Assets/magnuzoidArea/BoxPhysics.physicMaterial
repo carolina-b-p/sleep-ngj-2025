@@ -9,10 +9,6 @@ PhysicMaterial:
   m_Name: BoxPhysics
   dynamicFriction: 0.1
   staticFriction: 0.2
-<<<<<<< HEAD
   bounciness: 0.9
-=======
-  bounciness: 0.5
->>>>>>> 67d4848b0776d2fc7a5fea75d578313bed8b2e8d
   frictionCombine: 1
   bounceCombine: 3

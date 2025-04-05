@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 7821363063332442997}
   - component: {fileID: 7511299431018911664}
   - component: {fileID: 2894939606093310965}
+  - component: {fileID: 5493098598092217632}
   m_Layer: 0
   m_Name: tile_03
   m_TagString: WFCTile
@@ -578,6 +579,28 @@ MonoBehaviour:
   DownSocket: CRC
   LeftSocket: CCC
   DeliveryLocations: []
+--- !u!64 &5493098598092217632
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6064063397848558170}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6799109992820584872, guid: 065f551c3bef941a9850ec57fcce8a1a, type: 3}
 --- !u!1 &6630864092659006462
 GameObject:
   m_ObjectHideFlags: 0

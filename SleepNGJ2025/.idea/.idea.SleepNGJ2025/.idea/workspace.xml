@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="419d05f9-aeb3-4b3e-8ca6-00789151bbf5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SleepNGJ2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SleepNGJ2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Missions.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Missions.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Controllers/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Controllers/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Car/Car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Car/Car.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Car Test 2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Car Test 2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Car Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Car Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Car Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Car Test.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Magnus sandbox.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Magnus sandbox.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TestSene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TestSene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/emtyTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/emtyTile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/extraTile_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/extraTile_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_02.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_03.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_03.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_04.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/magnuzoidArea/BoxPhysics.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/magnuzoidArea/BoxPhysics.physicMaterial" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +56,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "carolbranch",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,6 +94,9 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -94,6 +107,9 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
