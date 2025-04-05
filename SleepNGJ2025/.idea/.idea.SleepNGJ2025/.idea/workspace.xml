@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="419d05f9-aeb3-4b3e-8ca6-00789151bbf5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SleepNGJ2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SleepNGJ2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TestSene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TestSene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_03.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_03.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/tmp-test-socket-gen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/tmp-test-socket-gen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SocketedTileDescriptions.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SocketedTileDescriptions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/magnuzoidArea/New Universal Render Pipeline Asset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/magnuzoidArea/New Universal Render Pipeline Asset_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Missions.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Missions.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Controllers/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Controllers/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "carolbranch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,9 +84,6 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
-      <option name="runtimes">
-        <list />
-      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -99,9 +94,6 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
-      <option name="runtimes">
-        <list />
-      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -116,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743849894041</updated>
-      <workItem from="1743849895942" duration="8677000" />
+      <workItem from="1743849895942" duration="10142000" />
     </task>
     <servers />
   </component>
