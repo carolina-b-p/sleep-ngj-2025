@@ -19927,8 +19927,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5044105987794353250, guid: 68956754a14c38d4892036d7b55ea6a0, type: 3}
-      propertyPath: rotationDamping
-      value: 5
+      propertyPath: maxDistance
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5044105987794353250, guid: 68956754a14c38d4892036d7b55ea6a0, type: 3}
       propertyPath: targetCarController
@@ -20362,73 +20362,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2835754528588624772, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835754528588624772, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835754528588624772, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.targetPosition
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028033794506923204, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028033794506923204, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028033794506923204, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.targetPosition
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 5988041446804059672, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
-    - target: {fileID: 8049045127114108808, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049045127114108808, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049045127114108808, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.targetPosition
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387967723649534708, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387967723649534708, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387967723649534708, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.targetPosition
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8850740682636178941, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: maxSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8850740682636178941, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: brakeTorque
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8850740682636178941, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: centerOfMassOffset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8859856485259024626, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8859856485259024626, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
       propertyPath: m_LocalPosition.y
