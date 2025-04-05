@@ -1,0 +1,330 @@
+{
+    "LeftSocketTiles": [
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_03",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_03",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_03",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_03",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_01",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_04",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_04",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_04",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_04",
+            "Rotation": 3
+        }
+    ],
+    "RightSocketTiles": [
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_03",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_03",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_03",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_03",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_01",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_04",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_04",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_04",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_04",
+            "Rotation": 3
+        }
+    ],
+    "UpSocketTiles": [
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_03",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_03",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_03",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_03",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_01",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_04",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_04",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_04",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_04",
+            "Rotation": 3
+        }
+    ],
+    "DownSocketTiles": [
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_02",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_03",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_03",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_03",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_03",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_01",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_01",
+            "Rotation": 3
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_04",
+            "Rotation": 0
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_04",
+            "Rotation": 1
+        },
+        {
+            "Socket": "CRC",
+            "Prefab": "tile_04",
+            "Rotation": 2
+        },
+        {
+            "Socket": "CCC",
+            "Prefab": "tile_04",
+            "Rotation": 3
+        }
+    ]
+}
