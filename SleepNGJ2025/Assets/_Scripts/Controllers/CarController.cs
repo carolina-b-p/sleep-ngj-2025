@@ -75,8 +75,14 @@ public class CarController : MonoBehaviour
 
         // Calculate the steering angle based on the steering input and the current speed of the car
         currentSpeed = rb.velocity.magnitude * 3.6f; // Convert from m/s to km/h
+
         //steering amount should be calculated as the current speed inverse lerped between minsteering speed and max steering speed
+        // if handbraking we shouldnt limit steering, so we set the steering amount to 1f
         float steeringAmount = Mathf.InverseLerp(maxSteeringSpeed, minSteeringSpeed, currentSpeed);
+        if (handbrake > 0f)
+        {
+            steeringAmount = 1f; // Set to 1 when handbraking
+        }
         float targetsteeringAngle = Mathf.Lerp(minSteeringAngle, maxSteeringAngle, steeringAngleSpeedCurve.Evaluate(steeringAmount)) * steering;
         steeringAngle = Mathf.Lerp(steeringAngle, targetsteeringAngle, Time.deltaTime * 5f); // Smoothly interpolate the steering angle
 
@@ -104,13 +110,12 @@ public class CarController : MonoBehaviour
         //otherwise, apply brake torque only to the back wheels (index 2 and 3 in the wheelColliders list)
         if (handbrake > 0f)
         {
-            acceleration = 0;
             for (int i = 0; i < wheelColliders.Count; i++)
             {
                 WheelCollider wheelCollider = wheelColliders[i];
                 if (i == 0 || i == 1) // Front wheels
                 {
-                    wheelCollider.brakeTorque = brakeTorque * handbrake;
+                    wheelCollider.brakeTorque = brakeTorque * handbrake * 0.25f;
                 }
                 else // Front wheels
                 {
@@ -135,9 +140,20 @@ public class CarController : MonoBehaviour
             }
         }
 
-        
+        //if the handbrake is held we wand to apply a slight sideways force to the front of the car in the direction of the steering but it should be lowered when car speed is lowered
+        // the back of the car should also be pushed in the same direction as the front of the car, but it should be less than the front of the car, this will make the car feel more stable and less likely to flip over.
+        if (handbrake > 0f && currentSpeed > 10f)
+        {
+            Vector3 sidewaysForce = transform.right * steering * handbrake * .5f * Mathf.InverseLerp(0, maxSpeed, currentSpeed+10);
+            rb.AddForceAtPosition(sidewaysForce * 1, (wheelColliders[0].transform.position + wheelColliders[1].transform.position)/2, ForceMode.Force);
+            
+            rb.AddForceAtPosition(sidewaysForce * -2f, (wheelColliders[2].transform.position + wheelColliders[3].transform.position) / 2, ForceMode.Acceleration);
+
+        }
+
         // Calculate the motor torque based on the acceleration input and the maximum motor torque
-        float motorTorque = acceleration * maxMotorTorque;
+        //motor torque should decrease towards 0 as the player nears the max speed
+        float motorTorque = acceleration * maxMotorTorque * (1 - Mathf.InverseLerp(0, maxSpeed, currentSpeed)); // Calculate the motor torque based on the acceleration input and the maximum motor torque
 
         // Apply the motor torque to the rear wheels (index 2 and 3 in the wheelColliders list)
         wheelColliders[2].motorTorque = motorTorque;
