@@ -43,19 +43,17 @@ public class CarController : MonoBehaviour
         //player input shoud deteriorate if no input is given, so we will set the acceleration input to 0 if it is less than 0.1f, this will make the car slow down if no input is given.
         if (MathF.Abs(accelerationInput) < 0.1f)
         {
-            accelerationInput = 0f;
-        }
-        //steering input should deteriorate if no input is given, so we will set the steering input to 0 if it is less than 0.1f, this will make the car slow down if no input is given.
-        if (MathF.Abs(steeringInput) < 0.1f)
-        {
-            steeringInput = 0f;
-        }
-        //brake input shoud deteriorate if no input is given, so we will set the brake input to 0 if it is less than 0.1f, this will make the car slow down if no input is given.
-        if (MathF.Abs(brakeInput) < 0.1f)
-        {
-            brakeInput = 0f;
+            brakeInput = Mathf.Max(brakeInput,0.1f);
         }
 
+        //if the car is mooving in the opposite direction of the acceleration input, we will make the car brake as well, this will make the car slow down if it is going in the opposite direction of the acceleration input.
+        //this should work both for accelerating forwards and reversing (accelerating negatively)
+        //we check this by using dot product between the car's velocity and the acceleration input, if the dot product is less than 0, it means the car is going in the opposite direction of the acceleration input.
+        //this will make the car slow down if it is going in the opposite direction of the acceleration input.
+        if (Vector3.Dot(rb.velocity, transform.forward) < 0f && accelerationInput > 0f)
+        {
+            brakeInput = 1f;
+        }
 
         // Calculate the motor torque based on the acceleration input and the maximum motor torque
         float motorTorque = accelerationInput * maxMotorTorque;
