@@ -23,32 +23,28 @@
         "com.unity.mathematics": "1.2.1",
         "com.unity.modules.jsonserialize": "1.0.0"
       },
-<<<<<<< HEAD
       "url": "https://packages.unity.com"
-=======
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
->>>>>>> 67d4848b0776d2fc7a5fea75d578313bed8b2e8d
     },
     "com.unity.collab-proxy": {
       "version": "2.7.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.editorcoroutines": {
       "version": "1.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.feature.development": {
       "version": "1.0.1",
@@ -71,7 +67,7 @@
       "dependencies": {
         "com.unity.ext.nunit": "1.0.6"
       },
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
       "version": "2.0.22",
@@ -80,21 +76,14 @@
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
       },
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
       "version": "1.2.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
-    },
-    "com.unity.mathematics": {
-      "version": "1.2.6",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
       "version": "1.2.6",
@@ -108,76 +97,7 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
-    },
-    "com.unity.render-pipelines.core": {
-      "version": "14.0.10",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.terrain": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      }
-    },
-    "com.unity.render-pipelines.high-definition": {
-      "version": "14.0.10",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.mathematics": "1.2.4",
-        "com.unity.burst": "1.8.9",
-        "com.unity.modules.video": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0",
-        "com.unity.modules.terrain": "1.0.0",
-        "com.unity.render-pipelines.core": "14.0.10",
-        "com.unity.shadergraph": "14.0.10",
-        "com.unity.visualeffectgraph": "14.0.10",
-        "com.unity.render-pipelines.high-definition-config": "14.0.10"
-      }
-    },
-    "com.unity.render-pipelines.high-definition-config": {
-      "version": "14.0.10",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.render-pipelines.core": "14.0.10"
-      }
-    },
-    "com.unity.render-pipelines.universal": {
-      "version": "14.0.10",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.mathematics": "1.2.1",
-        "com.unity.burst": "1.8.9",
-        "com.unity.render-pipelines.core": "14.0.10",
-        "com.unity.shadergraph": "14.0.10",
-        "com.unity.render-pipelines.universal-config": "14.0.9"
-      }
-    },
-    "com.unity.render-pipelines.universal-config": {
-      "version": "14.0.9",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.render-pipelines.core": "14.0.9"
-      }
-    },
-    "com.unity.rendering.denoising": {
-      "version": "1.0.2",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.searcher": {
-      "version": "4.9.2",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
       "version": "14.0.10",
@@ -253,11 +173,10 @@
       "depth": 2,
       "source": "registry",
       "dependencies": {},
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
       "version": "14.0.10",
-<<<<<<< HEAD
       "depth": 1,
       "source": "builtin",
       "dependencies": {
@@ -267,14 +186,19 @@
     },
     "com.unity.sysroot": {
       "version": "2.0.10",
-=======
->>>>>>> 67d4848b0776d2fc7a5fea75d578313bed8b2e8d
       "depth": 1,
-      "source": "builtin",
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.sysroot.linux-x86_64": {
+      "version": "2.0.9",
+      "depth": 1,
+      "source": "registry",
       "dependencies": {
-        "com.unity.render-pipelines.core": "14.0.10",
-        "com.unity.searcher": "4.9.2"
-      }
+        "com.unity.sysroot": "2.0.10"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
       "version": "1.1.33",
@@ -285,17 +209,17 @@
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       },
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.testtools.codecoverage": {
       "version": "1.2.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.settings-manager": "1.0.1",
-        "com.unity.test-framework": "1.0.16"
+        "com.unity.test-framework": "1.0.16",
+        "com.unity.settings-manager": "1.0.1"
       },
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
       "version": "3.0.6",
@@ -304,25 +228,19 @@
       "dependencies": {
         "com.unity.ugui": "1.0.0"
       },
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
       "version": "1.7.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-<<<<<<< HEAD
         "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.director": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
-=======
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.director": "1.0.0",
->>>>>>> 67d4848b0776d2fc7a5fea75d578313bed8b2e8d
         "com.unity.modules.particlesystem": "1.0.0"
       },
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.toolchain.linux-x86_64": {
       "version": "2.0.10",
@@ -357,10 +275,10 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.ugui": "1.0.0"
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
       },
-      "url": "http://vwagwosac268.wob.vw.vwg:8090"
+      "url": "https://packages.unity.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

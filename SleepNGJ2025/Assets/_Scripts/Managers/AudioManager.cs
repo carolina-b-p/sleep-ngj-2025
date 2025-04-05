@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
 
     private void PlayEngineSfx() 
     {
-      if (_carController.accelerationInput > 0) 
+      if (_carController.acceleration > 0) 
       {
         var randomPitch = Random.Range(0.5f, 0.8f);
         _sfxSource.clip = _drivingSfx.sfxClip;
