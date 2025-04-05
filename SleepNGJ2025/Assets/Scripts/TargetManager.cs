@@ -29,10 +29,15 @@ public class TargetManager : MonoBehaviour
 
     public void SelectNewTarget()
     {
-        if (targetsParent.transform.childCount == 0)
-            return;
-        int randomIndex = Random.Range(0, targetsParent.transform.childCount);
-        targetTransform = targetsParent.transform.GetChild(randomIndex);
+        var targets = GameObject.FindGameObjectsWithTag("DeliveryLocation");
+        var index = Random.Range(0, targets.Length);
+        targetTransform = targets[index].transform;
+        
+        //
+        // if (targetsParent.transform.childCount == 0)
+        //     return;
+        // int randomIndex = Random.Range(0, targetsParent.transform.childCount);
+        // targetTransform = targetsParent.transform.GetChild(randomIndex);
         targetIndicator = Instantiate(targetIndicatorPrefab, targetTransform.position, Quaternion.identity);
     }
 
