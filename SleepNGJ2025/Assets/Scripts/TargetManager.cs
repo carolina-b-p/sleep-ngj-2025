@@ -2,15 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class TargetManager : MonoBehaviour
 {
+    private static readonly int BoxColor = Shader.PropertyToID("_BoxColor");
     public GameObject targetsParent;
     public GameObject targetIndicatorPrefab;
     public Transform targetTransform;
     public GameObject targetIndicator;
     public float targetRadius = 3f;
+    [ColorUsage(true, true)]
+    public Color notInUseColor;
+    [ColorUsage(true, true)]
+    public Color inUseColor;
 
     //Singleton instance
     public static TargetManager Instance { get; private set; }
@@ -40,12 +46,12 @@ public class TargetManager : MonoBehaviour
         // targetTransform = targetsParent.transform.GetChild(randomIndex);
         targetIndicator = Instantiate(targetIndicatorPrefab, targetTransform.position, Quaternion.identity);
     }
-    public void PlayerAtTargetVisuals(bool isAtTarget)
+    public void PlayerAtTargetVisuals(bool isAtTarget, float completionPercent = 0.0f)
     {
         // Change the color of the target indicator to green
         if (targetIndicator != null)
         {
-            targetIndicator.GetComponent<Renderer>().material.color = isAtTarget ? Color.green : Color.yellow;
+            targetIndicator.GetComponent<MeshRenderer>().material.SetColor(BoxColor, isAtTarget ? Color.Lerp(notInUseColor, inUseColor, completionPercent) : notInUseColor);
         }
     }
     
