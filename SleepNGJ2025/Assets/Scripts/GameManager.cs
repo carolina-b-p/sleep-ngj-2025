@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour
     public GameObject playerArrowPrefab;
     private PlayerController playerController;
     private float timeAtTarget = 0; //the time the player has been at the target
+    private float lastTimeSleepBarUpdate = 0; //the last time the sleep bar was updated
+    
     [SerializeField] private float deliveryWaitTime = 1f; //the time the player needs to stay at the target to successfully deliver
     private void Start()
     {
         InitializeGame();
+        lastTimeSleepBarUpdate = Time.deltaTime;
     }
 
     private void InitializeGame()
@@ -73,12 +76,12 @@ public class GameManager : MonoBehaviour
         // Change sleep amount based on player state
         if (playerController.isAsleep && SleepManager.Instance.sleepAmount<=100)
         {
-            SleepManager.Instance.ChangeSleepAmount(1.5f * Time.deltaTime);
+            SleepManager.Instance.ChangeSleepAmount(40f * Mathf.Abs(Time.deltaTime-lastTimeSleepBarUpdate));
         }
         else if (!playerController.isAsleep && SleepManager.Instance.sleepAmount>=0)
         {
-            SleepManager.Instance.ChangeSleepAmount(-1.5f * Time.deltaTime);
+            SleepManager.Instance.ChangeSleepAmount(-15f * Mathf.Abs(Time.deltaTime-lastTimeSleepBarUpdate));
         }
-        
+        lastTimeSleepBarUpdate = Time.deltaTime;
     }
 }
