@@ -14,7 +14,7 @@ public class HouseTest : MonoBehaviour
         transform.position += randomDirection; // Move the house in the random direction
 
         //scale the house randomly in y
-        Vector3 randomScale = new Vector3( Random.Range(10f, 11f), Random.Range(1f, 5f)*10, Random.Range(10f, 11f)); // Random scale in y direction
+        Vector3 randomScale = new Vector3( Random.Range(9f, 11f), Random.Range(1f, 5f)*10, Random.Range(9f, 11f)); // Random scale in y direction
         transform.localScale = randomScale; // Apply the random scale to the house
 
         //add some slight rotation around the y axis
