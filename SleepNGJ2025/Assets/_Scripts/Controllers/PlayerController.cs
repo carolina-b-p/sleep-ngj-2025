@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public CarController carController; // Reference to the CarController script
     public float accelerationInput = 0f; // Acceleration input value
     public float steeringInput = 0f; // Steering input value
-    public float brakeInput = 0f; // Brake input value
+    public float handbrakeInput = 0f; // Brake input value
+    public bool isAsleep = false; // Flag to indicate if the car is asleep
 
     void Start()
     {
@@ -24,9 +25,20 @@ public class PlayerController : MonoBehaviour
         // Get input from WASD keys or controller
         accelerationInput = Input.GetAxis("Acceleration");
         steeringInput = Input.GetAxis("Horizontal"); 
-        brakeInput = Input.GetAxis("Brake"); 
+        handbrakeInput = Input.GetAxis("Brake"); 
+        // action button input to check while pressed and onrelease
+        if (Input.GetButton("Fire1") && Input.GetButton("Fire2"))
+        {
+            Debug.Log("Sleep buttons pressed");
+            isAsleep = true;
+        }
+        else if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire2"))
+        {
+            Debug.Log("At least one Sleep button released");
+            isAsleep = false;
+        }
 
         // Pass the input values to the CarController script
-        carController.Move(accelerationInput, steeringInput, brakeInput);
+        carController.Move(accelerationInput, steeringInput, handbrakeInput, isAsleep);
     }
 }
