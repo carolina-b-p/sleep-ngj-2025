@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.5748165, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19927,8 +19927,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5044105987794353250, guid: 68956754a14c38d4892036d7b55ea6a0, type: 3}
-      propertyPath: rotationDamping
-      value: 5
+      propertyPath: maxDistance
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5044105987794353250, guid: 68956754a14c38d4892036d7b55ea6a0, type: 3}
       propertyPath: targetCarController
@@ -20362,73 +20362,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2835754528588624772, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835754528588624772, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835754528588624772, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.targetPosition
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028033794506923204, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028033794506923204, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028033794506923204, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.targetPosition
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 5988041446804059672, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
-    - target: {fileID: 8049045127114108808, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049045127114108808, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049045127114108808, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.targetPosition
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387967723649534708, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387967723649534708, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387967723649534708, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: m_SuspensionSpring.targetPosition
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8850740682636178941, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: maxSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8850740682636178941, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: brakeTorque
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8850740682636178941, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
-      propertyPath: centerOfMassOffset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8859856485259024626, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8859856485259024626, guid: 19e82a99e336a0544bb18dca48e3e34d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -77203,13 +77143,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
+      propertyPath: inUseColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
+      propertyPath: inUseColor.g
+      value: 2.297397
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
+      propertyPath: inUseColor.r
+      value: 0.14108275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
       propertyPath: targetsParent
       value: 
       objectReference: {fileID: 905526891}
     - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
+      propertyPath: notInUseColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
+      propertyPath: notInUseColor.g
+      value: 1.8057021
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
+      propertyPath: notInUseColor.r
+      value: 3.6603773
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
       propertyPath: targetIndicator
       value: 
       objectReference: {fileID: 6957756274114195196, guid: bcecd47427bc54a33838f759f48323ee, type: 3}
+    - target: {fileID: 3483887348261952083, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
+      propertyPath: targetIndicatorPrefab
+      value: 
+      objectReference: {fileID: 5365318235793972573, guid: e6e8eb9656e4e4091a25ec0d39b08246, type: 3}
     - target: {fileID: 8092224194126178646, guid: 68dd6757c7f5148cba7836f9507251cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

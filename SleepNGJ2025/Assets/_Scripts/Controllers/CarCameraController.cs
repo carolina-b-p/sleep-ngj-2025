@@ -18,9 +18,16 @@ public class CarCameraController : MonoBehaviour
     public float rotationDamping = 3f; // Damping for the rotation of the camera
     public float minDistance = 2f; // Minimum distance from the target car
     public float maxDistance = 10f; // Maximum distance from the target car
+    
+    public float minDistanceSpeed = 10f; // Minimum distance from the target car
+    public float maxDistanceSpeed = 50; // Maximum distance from the target car
 
     public void FixedUpdate()
     {
+        //the distance is set to be a value in between minDistance and maxDistance, this will make the camera zoom in when the car is going slower and zoom out when going faster.
+        float distanceLerp  = Mathf.InverseLerp(minDistanceSpeed, maxDistanceSpeed, targetCarController.currentSpeed);
+        distance = Mathf.Lerp(minDistance, maxDistance, distanceLerp); // Lerp the distance based on the car's speed
+
         // Get the target car's position and rotation
         Vector3 targetPosition = targetCarController.transform.position + Vector3.up * height - targetCarController.transform.forward * distance;
 

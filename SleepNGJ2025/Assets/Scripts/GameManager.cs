@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerArrowPrefab;
     private PlayerController playerController;
     private float timeAtTarget = 0; //the time the player has been at the target
-    private float deliveryWaitTime = 1f; //the time the player needs to stay at the target to successfully deliver
+    [SerializeField] private float deliveryWaitTime = 1f; //the time the player needs to stay at the target to successfully deliver
     private void Start()
     {
         InitializeGame();
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Target reached!!");
                 
-                TargetManager.Instance.PlayerAtTargetVisuals(true);
+                TargetManager.Instance.PlayerAtTargetVisuals(true, timeAtTarget / (deliveryWaitTime * 0.9f));
                 
                 //TODO-- delivery loading circle UI
                 
