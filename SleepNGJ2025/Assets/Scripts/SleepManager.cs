@@ -35,6 +35,7 @@ public class SleepManager : MonoBehaviour
     public void UpdateSleepBar()
     {
         sleepBarLevel.fillAmount = sleepAmount / 100f;
+        // Update the color of the sleep bar based on the sleep amount
         if (sleepAmount / 100 <= 1 && sleepAmount / 100 > 0.75f)
         {
             sleepBarLevel.color = sleepColors[1];
