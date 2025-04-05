@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Target reached!!");
                 
-                TargetManager.Instance.PlayerAtTargetVisuals(true, timeAtTarget / (deliveryWaitTime * 0.9f));
+                TargetManager.Instance.PlayerAtTargetVisuals(true, timeAtTarget / (deliveryWaitTime * 0.8f));
                 
                 //TODO-- delivery loading circle UI
                 
