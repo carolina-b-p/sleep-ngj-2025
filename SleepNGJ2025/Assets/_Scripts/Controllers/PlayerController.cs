@@ -26,6 +26,17 @@ public class PlayerController : MonoBehaviour
         accelerationInput = Input.GetAxis("Acceleration");
         steeringInput = Input.GetAxis("Horizontal"); 
         handbrakeInput = Input.GetAxis("Brake"); 
+        // action button input to check while pressed and onrelease
+        if (Input.GetButton("Fire1") && Input.GetButton("Fire2"))
+        {
+            Debug.Log("Sleep buttons pressed");
+            isAsleep = true;
+        }
+        else if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire2"))
+        {
+            Debug.Log("At least one Sleep button released");
+            isAsleep = false;
+        }
 
         // Pass the input values to the CarController script
         carController.Move(accelerationInput, steeringInput, handbrakeInput, isAsleep);

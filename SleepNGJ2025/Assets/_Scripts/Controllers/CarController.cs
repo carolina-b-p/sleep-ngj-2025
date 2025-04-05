@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -24,6 +25,10 @@ public class CarController : MonoBehaviour
     public float maxSpeed = 200f; // Maximum speed of the car, it will be capped at this speed, if the car goes faster than this speed, it will be slowed down to this speed
     public float currentSpeed = 0f; // Current speed of the car, it is used to calculate the steering angle based on the speed of the car
     public float steeringAngle = 0f;
+
+    public float frontWheelSpeed = 0f;
+    public float backWheelSpeed = 0f;
+
     public float maxSteeringAngle = 30f; // Maximum steering angle for the front wheels when the car goes the slowest
     public float minSteeringAngle = 10f; // Minimum steering angle for the front wheels when the car goes the fastest
     public AnimationCurve steeringAngleSpeedCurve; // Animation curve to control the steering angle based on speed, goes from 0 to 1, where 0 is the minSteeringAngle and 1 is the maxSteeringAngle
@@ -43,6 +48,10 @@ public class CarController : MonoBehaviour
     }
         
     public void Update(){
+
+        frontWheelSpeed = wheelColliders[0].rpm * (wheelColliders[0].radius * 2 * Mathf.PI) * 60f / 1000f ; // Calculate the speed of the front wheels in km/h
+        backWheelSpeed = wheelColliders[2].rpm * (wheelColliders[2].radius * 2 * Mathf.PI) * 60f / 1000f; // Calculate the speed of the back wheels in km/h
+
         //if the car is mooving in the opposite direction of the acceleration input, we will make the car brake as well, this will make the car slow down if it is going in the opposite direction of the acceleration input.
         //this should work both for accelerating forwards and reversing (accelerating negatively)
         //we check this by using dot product between the car's velocity and the acceleration input, if the dot product is less than 0, it means the car is going in the opposite direction of the acceleration input.
@@ -51,7 +60,8 @@ public class CarController : MonoBehaviour
         //player input shoud deteriorate if no input is given, so we will set the acceleration input to 0 if it is less than 0.1f, this will make the car slow down if no input is given.
         if (MathF.Abs(acceleration) < 0.1f)
         {
-            brake = 0.5f;
+            brake = 1f;
+
         }else if (rb.velocity.magnitude > 0.25f && Vector3.Dot(rb.velocity, transform.forward * acceleration) < 0f)
         {
             brake = 1;
@@ -69,7 +79,7 @@ public class CarController : MonoBehaviour
         float steeringAmount = Mathf.InverseLerp(maxSteeringSpeed, minSteeringSpeed, currentSpeed);
         float targetsteeringAngle = Mathf.Lerp(minSteeringAngle, maxSteeringAngle, steeringAngleSpeedCurve.Evaluate(steeringAmount)) * steering;
         steeringAngle = Mathf.Lerp(steeringAngle, targetsteeringAngle, Time.deltaTime * 5f); // Smoothly interpolate the steering angle
-        
+
         // Apply the steering angle to the front wheels (index 0 and 1 in the wheelColliders list)
         wheelColliders[0].steerAngle = steeringAngle;
         wheelColliders[1].steerAngle = steeringAngle;
