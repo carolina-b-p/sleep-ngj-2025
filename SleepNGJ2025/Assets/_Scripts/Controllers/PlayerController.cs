@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float accelerationInput = 0f; // Acceleration input value
     public float steeringInput = 0f; // Steering input value
     public float handbrakeInput = 0f; // Brake input value
+    public bool isAsleep = false; // Flag to indicate if the car is asleep
 
     void Start()
     {
@@ -27,6 +28,6 @@ public class PlayerController : MonoBehaviour
         handbrakeInput = Input.GetAxis("Brake"); 
 
         // Pass the input values to the CarController script
-        carController.Move(accelerationInput, steeringInput, handbrakeInput);
+        carController.Move(accelerationInput, steeringInput, handbrakeInput, isAsleep);
     }
 }

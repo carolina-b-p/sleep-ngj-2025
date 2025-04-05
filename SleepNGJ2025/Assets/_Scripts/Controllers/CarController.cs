@@ -33,8 +33,9 @@ public class CarController : MonoBehaviour
     public Vector3 centerOfMassOffset = new Vector3(0f, -0.5f, 0f); // Offset for the center of mass of the car, this is used to make the car more stable and less likely to flip over
 
     //the function called by other scripts to move the car, it takes in acceleration and brake input values which are between 0 and 1, and steering which is between -1 and 1.
-    public void Move(float accelerationInput, float steeringInput, float handbrakeInput)
+    public void Move(float accelerationInput, float steeringInput, float handbrakeInput, bool isAsleep)
     {
+        // Set the acceleration, steering, and brake input values based on the input from other scripts
         acceleration = accelerationInput; // Set the acceleration input value
         steering = steeringInput; // Set the steering input value
         handbrake = handbrakeInput; // Set the brake input value
