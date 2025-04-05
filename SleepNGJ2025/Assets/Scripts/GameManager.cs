@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Transform player;
     public GameObject playerArrowPrefab;
     private PlayerController playerController;
+    private float timeAtTarget = 0; //the time the player has been at the target
+    [SerializeField] private float deliveryWaitTime = 1f; //the time the player needs to stay at the target to successfully deliver
     private void Start()
     {
         InitializeGame();
@@ -31,9 +33,25 @@ public class GameManager : MonoBehaviour
             if (distance < TargetManager.Instance.targetRadius)
             {
                 Debug.Log("Target reached!!");
+                
+                TargetManager.Instance.PlayerAtTargetVisuals(true, timeAtTarget / (deliveryWaitTime * 0.9f));
+                
+                //TODO-- delivery loading circle UI
+                
                 // Destroy the target indicator and select a new target
-                Destroy(TargetManager.Instance.targetIndicator);
-                TargetManager.Instance.SelectNewTarget();
+                timeAtTarget += Time.deltaTime;
+                if (timeAtTarget >= deliveryWaitTime)
+                {
+                    Destroy(TargetManager.Instance.targetIndicator);
+                    TargetManager.Instance.SelectNewTarget();
+                    timeAtTarget = 0;
+                }
+            }
+            else
+            {
+                TargetManager.Instance.PlayerAtTargetVisuals(false);
+                timeAtTarget = 0;
+                //TODO-- Hide delivery loading circle UI
             }
         }
 

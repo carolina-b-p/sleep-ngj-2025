@@ -60,7 +60,7 @@ public class CarController : MonoBehaviour
         //player input shoud deteriorate if no input is given, so we will set the acceleration input to 0 if it is less than 0.1f, this will make the car slow down if no input is given.
         if (MathF.Abs(acceleration) < 0.1f)
         {
-            brake = 1f;
+            brake = .5f;
 
         }else if (rb.velocity.magnitude > 0.25f && Vector3.Dot(rb.velocity, transform.forward * acceleration) < 0f)
         {
@@ -93,6 +93,13 @@ public class CarController : MonoBehaviour
                 wheelCollider.brakeTorque = brakeTorque * 0.1f;
             }
         }
+
+        //reset the brake torque to 0
+        foreach (WheelCollider wheelCollider in wheelColliders)
+        {
+            wheelCollider.brakeTorque = 0f; // No brake torque when not braking
+        }
+
         // Apply handbrake torque to all wheels if handbrake input is greater than 0
         //otherwise, apply brake torque only to the back wheels (index 2 and 3 in the wheelColliders list)
         if (handbrake > 0f)
@@ -101,7 +108,7 @@ public class CarController : MonoBehaviour
             for (int i = 0; i < wheelColliders.Count; i++)
             {
                 WheelCollider wheelCollider = wheelColliders[i];
-                if (i == 2 || i == 3) // Back wheels
+                if (i == 0 || i == 1) // Front wheels
                 {
                     wheelCollider.brakeTorque = brakeTorque * handbrake;
                 }
@@ -111,7 +118,7 @@ public class CarController : MonoBehaviour
                 }
             }
         }
-        else if (brake > 0f)
+        if (brake > 0f)
         {
             acceleration = 0;
             for (int i = 0; i < wheelColliders.Count; i++)
@@ -125,13 +132,6 @@ public class CarController : MonoBehaviour
                 {
                     wheelCollider.brakeTorque = 0f; // No brake torque for front wheels when braking
                 }
-            }
-        }
-        else
-        {
-            foreach (WheelCollider wheelCollider in wheelColliders)
-            {
-                wheelCollider.brakeTorque = 0f; // No brake torque when not braking
             }
         }
 
@@ -171,6 +171,6 @@ public class CarController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         // Set the center of mass of the car to be lower for better stability
-        rb.centerOfMass = centerOfMassOffset;
+        rb.centerOfMass += centerOfMassOffset;
     }
 }
