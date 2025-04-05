@@ -55,11 +55,11 @@ public class GameManager : MonoBehaviour
         // Change sleep amount based on player state
         if (playerController.isAsleep && SleepManager.Instance.sleepAmount<=100)
         {
-            SleepManager.Instance.ChangeSleepAmount(0.1f * Time.deltaTime);
+            SleepManager.Instance.ChangeSleepAmount(2f * Time.deltaTime);
         }
         else if (!playerController.isAsleep && SleepManager.Instance.sleepAmount>=0)
         {
-            SleepManager.Instance.ChangeSleepAmount(-0.1f * Time.deltaTime);
+            SleepManager.Instance.ChangeSleepAmount(-2f * Time.deltaTime);
         }
         
     }
