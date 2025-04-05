@@ -148,13 +148,13 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.25
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 20000
+    damper: 250
     targetPosition: 0.5
-  m_SuspensionDistance: 0.3
+  m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
+  m_Mass: 25
+  m_WheelDampingRate: 0.5
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -254,18 +254,18 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.25
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 20000
+    damper: 250
     targetPosition: 0.5
-  m_SuspensionDistance: 0.3
+  m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
+  m_Mass: 25
+  m_WheelDampingRate: 0.5
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.6
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteValue: 0.6
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -366,13 +366,13 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.25
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 20000
+    damper: 250
     targetPosition: 0.5
-  m_SuspensionDistance: 0.3
+  m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
+  m_Mass: 25
+  m_WheelDampingRate: 0.5
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -521,9 +521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c248992e2d99ee4eae315a7a02da4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationInput: 0
-  steeringInput: 0
-  brakeInput: 0
+  acceleration: 0
+  steering: 0
+  brake: 0
+  handbrake: 0
   wheelColliders:
   - {fileID: 2835754528588624772}
   - {fileID: 8387967723649534708}
@@ -534,11 +535,11 @@ MonoBehaviour:
   - {fileID: 5119161461770136602}
   - {fileID: 9195902200057369944}
   - {fileID: 1528005912675477753}
-  maxMotorTorque: 1500
+  maxMotorTorque: 3000
   maxSpeed: 200
   currentSpeed: 0
-  maxSteeringAngle: 60
-  minSteeringAngle: 30
+  maxSteeringAngle: 75
+  minSteeringAngle: 45
   steeringAngleSpeedCurve:
     serializedVersion: 2
     m_Curve:
@@ -582,7 +583,7 @@ MonoBehaviour:
   carController: {fileID: 8850740682636178941}
   accelerationInput: 0
   steeringInput: 0
-  brakeInput: 0
+  handbrakeInput: 0
 --- !u!1 &6260041180093705087
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,18 +984,18 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.25
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 20000
+    damper: 250
     targetPosition: 0.5
-  m_SuspensionDistance: 0.3
+  m_SuspensionDistance: 0.25
   m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
+  m_Mass: 25
+  m_WheelDampingRate: 0.5
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.6
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteValue: 0.6
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
