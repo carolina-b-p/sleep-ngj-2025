@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class TargetManager : MonoBehaviour
 {
     private static readonly int BoxColor = Shader.PropertyToID("_BoxColor");
-    public GameObject targetsParent;
+    //public GameObject targetsParent;
     public GameObject targetIndicatorPrefab;
     public Transform targetTransform;
     public GameObject targetIndicator;
