@@ -40,6 +40,13 @@ public class TargetManager : MonoBehaviour
         // targetTransform = targetsParent.transform.GetChild(randomIndex);
         targetIndicator = Instantiate(targetIndicatorPrefab, targetTransform.position, Quaternion.identity);
     }
-
+    public void PlayerAtTargetVisuals(bool isAtTarget)
+    {
+        // Change the color of the target indicator to green
+        if (targetIndicator != null)
+        {
+            targetIndicator.GetComponent<Renderer>().material.color = isAtTarget ? Color.green : Color.yellow;
+        }
+    }
     
 }
