@@ -7,11 +7,8 @@ public class AudioManager : MonoBehaviour
 {
     
     [SerializeField] private AudioSource _sfxSource;
-    [SerializeField] private AudioSource _musicSource;
-
     [SerializeField] private SfxScriptableObjects _drivingSfx;
-
-
+    [SerializeField] private AudioClip[] customerSfxArray;
     public static AudioManager Instance {get; private set;}
 
     [SerializeField] private CarController _carController;
@@ -40,5 +37,12 @@ public class AudioManager : MonoBehaviour
         _sfxSource.Play(); 
         _sfxSource.pitch = randomPitch;
       }
+    }
+    
+    public void PlayCustomerCheerSfx()
+    {
+        var randIndex = Random.Range(0, customerSfxArray.Length);
+        _sfxSource.clip = customerSfxArray[randIndex];
+        _sfxSource.Play();
     }
 }
