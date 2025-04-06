@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class AudioManager : MonoBehaviour
 {
     
-    [SerializeField] private AudioSource _sfxSource;
+    [SerializeField] private AudioSource _costumerReactionSound;
     [SerializeField] private SfxScriptableObjects _drivingSfx;
     [SerializeField] private AudioClip[] customerSfxArray;
     public static AudioManager Instance {get; private set;}
@@ -23,26 +24,25 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        if(!_sfxSource.isPlaying)
+        if(!_costumerReactionSound.isPlaying)
             PlayEngineSfx();
     }
-
-
+    
     private void PlayEngineSfx() 
     {
       if (_carController.acceleration > 0) 
       {
         var randomPitch = Random.Range(0.5f, 0.8f);
-        _sfxSource.clip = _drivingSfx.sfxClip;
-        _sfxSource.Play(); 
-        _sfxSource.pitch = randomPitch;
+        _costumerReactionSound.clip = _drivingSfx.sfxClip;
+        _costumerReactionSound.Play(); 
+        _costumerReactionSound.pitch = randomPitch;
       }
     }
     
     public void PlayCustomerCheerSfx()
     {
         var randIndex = Random.Range(0, customerSfxArray.Length);
-        _sfxSource.clip = customerSfxArray[randIndex];
-        _sfxSource.Play();
+        _costumerReactionSound.clip = customerSfxArray[randIndex];
+        _costumerReactionSound.Play();
     }
 }
