@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
             if (distance < TargetManager.Instance.targetRadius)
             {
                 Debug.Log("Target reached!!");
+
+                AudioManager.Instance.PlayCustomerSfx();
                 
                 TargetManager.Instance.PlayerAtTargetVisuals(true, timeAtTarget / (deliveryWaitTime * 0.8f));
                 
