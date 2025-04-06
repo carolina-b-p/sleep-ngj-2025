@@ -122,8 +122,8 @@ MonoBehaviour:
   houseFloor: {fileID: 5433848017854901530, guid: 3614f3846dd3d404c9c26ece71c8cbef, type: 3}
   houseMiddle: {fileID: 4179423251649829287, guid: 169a0039cbe877542afdca8707f79d13, type: 3}
   flooroffset: {x: 0, y: 4, z: 0}
-  minimumHouseHeight: 1
-  maximumHouseHeight: 20
+  minimumHouseHeight: 2
+  maximumHouseHeight: 5
   materials:
   - {fileID: 2100000, guid: bd3d4fe845c40c54ab3043705b3483fa, type: 2}
   - {fileID: 2100000, guid: ea476f5016bfc4a4eb445b1a68454271, type: 2}
