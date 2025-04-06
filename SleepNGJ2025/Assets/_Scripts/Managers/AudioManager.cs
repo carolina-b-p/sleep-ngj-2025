@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Search;
 using UnityEngine;
 
 
 public class AudioManager : MonoBehaviour
 {
+
+    [SerializeField] private AudioClip[]_customerCheers;
+    [SerializeField] private AudioSource _customerSfxSource;
     
     [SerializeField] private AudioSource _sfxSource;
     [SerializeField] private AudioSource _musicSource;
@@ -25,21 +29,28 @@ public class AudioManager : MonoBehaviour
             Instance = this;
     }
 
-    void Update()
+    public void PlayCustomerSfx()
     {
-        if(!_sfxSource.isPlaying)
-            PlayEngineSfx();
+      var customerIndex = Random.Range(0, _customerCheers.Count());
+      _customerSfxSource.clip = _customerCheers[customerIndex];
+      _customerSfxSource.Play();
     }
 
+    // void Update()
+    // {
+    //     if(!_sfxSource.isPlaying)
+    //         PlayEngineSfx();
+    // }
 
-    private void PlayEngineSfx() 
-    {
-      if (_carController.acceleration > 0) 
-      {
-        var randomPitch = Random.Range(0.5f, 0.8f);
-        _sfxSource.clip = _drivingSfx.sfxClip;
-        _sfxSource.Play(); 
-        _sfxSource.pitch = randomPitch;
-      }
-    }
+
+    // private void PlayEngineSfx() 
+    // {
+    //   if (_carController.acceleration > 0) 
+    //   {
+    //     var randomPitch = Random.Range(0.5f, 0.8f);
+    //     _sfxSource.clip = _drivingSfx.sfxClip;
+    //     _sfxSource.Play(); 
+    //     _sfxSource.pitch = randomPitch;
+    //   }
+    // }
 }
