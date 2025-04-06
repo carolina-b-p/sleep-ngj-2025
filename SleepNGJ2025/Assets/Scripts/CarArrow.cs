@@ -20,14 +20,22 @@ public class CarArrow : MonoBehaviour
         {
             // Calculate the direction to the target
             var intermediateTarget = GraphManager.Instance.UpdatePathAndGetIntermediateTarget(target.position);
-
+            
             if (!intermediateTarget.Item1)
             {
                 Debug.Log("Unreachable target detected, moving it!");
                 TargetManager.Instance.SelectNewTarget();
+                return;
             }
 
-            Vector3 direction = intermediateTarget.Item2 - transform.position;
+            if (intermediateTarget.Item2 > 15)
+            {
+                Debug.Log("Target is more than 15 tiles away, resetting it!");
+                TargetManager.Instance.SelectNewTarget();
+                return;
+            }
+
+            Vector3 direction = intermediateTarget.Item3 - transform.position;
             direction.y = 0; // Ignore vertical difference
 
             // Calculate the rotation step
