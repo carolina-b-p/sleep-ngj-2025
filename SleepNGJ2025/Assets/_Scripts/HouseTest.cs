@@ -47,7 +47,7 @@ public class HouseTest : MonoBehaviour
 
 
         //instansiate the house floor and middle prefabs
-        //GameObject floor = Instantiate(houseFloor, transform.position, Quaternion.identity, transform); // Instantiate the house floor prefab at the position of the house with the specified offset
+        GameObject floor = Instantiate(houseFloor, transform.position, Quaternion.identity, transform); // Instantiate the house floor prefab at the position of the house with the specified offset
 
         for (int i = 0; i < Random.Range(minimumHouseHeight, maximumHouseHeight); i++) // Loop through the height of the house
         {
