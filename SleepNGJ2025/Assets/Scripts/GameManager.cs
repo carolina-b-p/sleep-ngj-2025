@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     public GameObject MenuButton; //the button to go back to the menu
 
     [SerializeField] private float deliveryWaitTime = 1f; //the time the player needs to stay at the target to successfully deliver
+    public TextMeshProUGUI scoreText; //the text that shows the score
+    public int score = 0; //the score of the player
+    
     private void Start()
     {
         StartCoroutine(InitializeGame());
@@ -53,6 +56,8 @@ public class GameManager : MonoBehaviour
         deliveryTime = deadline;
         MenuButton.SetActive(false);
         gameover = false;
+        score = 0;
+        scoreText.text = ""+score;
     }
 
     public void UpdateDeadlineText()
@@ -95,6 +100,8 @@ public class GameManager : MonoBehaviour
     {
         deadline = deadline - deadlineChange;
         deliveryTime = deadline;
+        score++;
+        scoreText.text = "" + score;
         ResetDeadlineText();
     }
 
@@ -133,8 +140,6 @@ public class GameManager : MonoBehaviour
             float distance = Vector3.Distance(player.position, TargetManager.Instance.targetTransform.position);
             if (distance < TargetManager.Instance.targetRadius)
             {
-                Debug.Log("Target reached!!");
-                
                 TargetManager.Instance.PlayerAtTargetVisuals(true, timeAtTarget / (deliveryWaitTime * 0.8f));
                 
                 //TODO-- delivery loading circle UI
@@ -148,7 +153,7 @@ public class GameManager : MonoBehaviour
                     timeAtTarget = 0;
                     OnDeliveryDone();
 
-                    AudioManager.Instance.PlayCustomerCheerSfx();
+                   // AudioManager.Instance.PlayCustomerCheerSfx();
                 }
             }
             else
