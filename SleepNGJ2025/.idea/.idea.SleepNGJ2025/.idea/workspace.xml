@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="419d05f9-aeb3-4b3e-8ca6-00789151bbf5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SleepNGJ2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SleepNGJ2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CarArrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarArrow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TargetManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TargetManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/emtyTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/emtyTile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/extraTile_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/extraTile_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_02.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_03.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_03.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFC/TmpPrefabs/tile_04.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WFCGraphGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WFCGraphGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileDescriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileDescriptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Car/Car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Car/Car.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/White.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/TileDescriptor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.10/Runtime/Data/UniversalRenderPipelineAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.10/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.10/Shaders/Particles/ParticlesLit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Editor/VisualScripting.Core/Utilities/EditorUnityObjectUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Core/Dependencies/FullSerializer/fsPropertyAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Core/Serialization/SerializeAsAttribute.cs" root0="FORCE_HIGHLIGHTING" />
