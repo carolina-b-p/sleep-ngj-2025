@@ -1,12 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 
 
@@ -59,9 +55,9 @@ public class SocketPrefabRotation
             Socket = tuple.Item1, Prefab = tuple.Item2, Rotation = tuple.Item3
         };
 }
-
 public class WFCGraphCreator : MonoBehaviour
 {
+#if UNITY_EDITOR
     private string GetPrefabName(GameObject go)
     {
         return go.GetPrefabDefinition().name;
@@ -199,4 +195,5 @@ public class WFCGraphCreator : MonoBehaviour
         var descJson = JsonUtility.ToJson(socketMap, true);
         File.WriteAllBytes("Assets/SocketedTileDescriptions.json", Encoding.UTF8.GetBytes(descJson));
     }
+    #endif
 }

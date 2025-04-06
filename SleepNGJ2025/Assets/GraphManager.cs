@@ -20,7 +20,7 @@ public class GraphManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -73,7 +73,7 @@ public class GraphManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    public (bool, Vector3) UpdatePathAndGetIntermediateTarget(Vector3 position)
+    public (bool, int, Vector3) UpdatePathAndGetIntermediateTarget(Vector3 position)
     {
         if (!graphBuilt)
             BuildGraph();
@@ -98,7 +98,7 @@ public class GraphManager : MonoBehaviour
             !path.ContainsKey((playerx, playery)))
         {
             if (!BFS((playerx, playery), (targetx, targety)))
-                return (false, Vector3.zero);
+                return (false, -1, Vector3.zero);
             lastGeneratedTarget = (targetx, targety);
         }
         
@@ -109,7 +109,7 @@ public class GraphManager : MonoBehaviour
         if (path.ContainsKey(nextGoal))
             nextGoal = path[nextGoal];
 
-        return (true, new Vector3(nextGoal.Item1 * 25, 5, nextGoal.Item2 * 25));
+        return (true, path.Count, new Vector3(nextGoal.Item1 * 25, 5, nextGoal.Item2 * 25));
     }
 
     private bool BFS((int X, int Y) player, (int X, int Y) target)
