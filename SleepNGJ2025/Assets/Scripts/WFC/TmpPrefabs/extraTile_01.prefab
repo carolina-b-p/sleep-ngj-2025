@@ -59,7 +59,7 @@ MonoBehaviour:
   RightSocket: CCC
   DownSocket: CCC
   LeftSocket: CCC
-  Weight: 25
+  Weight: 5
   DeliveryLocations: []
 --- !u!1001 &333631804080373249
 PrefabInstance:
