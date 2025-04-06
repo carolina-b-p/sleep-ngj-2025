@@ -19,6 +19,6 @@ public class sleepoverlayscript : MonoBehaviour
     void Update()
     {
         var targetAlpha = carController.isSleeping ? 1f : 0f;
-        canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, targetAlpha, 0.1f);
+        canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, targetAlpha, 5f * Time.deltaTime);
     }
 }
