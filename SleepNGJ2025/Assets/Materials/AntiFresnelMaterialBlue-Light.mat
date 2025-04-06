@@ -50,14 +50,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 1.08
+    - _FresnelPower: 1.8
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ScrollSpeed: -3.05
+    - _ScrollSpeed: -6.01
     - _TiltIntensity: 0
     - _TiltSpeed: 0
     - _TopCutoff: 0.08
-    - _WaveWidth: 14.72
+    - _WaveWidth: 35.49
     m_Colors:
-    - _BoxColor: {r: 5.6568546, g: 1.6497802, b: 0, a: 0}
+    - _BoxColor: {r: 6.422234, g: 1.8729974, b: 0, a: 0}
   m_BuildTextureStacks: []
