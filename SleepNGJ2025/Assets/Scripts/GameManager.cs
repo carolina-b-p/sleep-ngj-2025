@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject MenuButton; //the button to go back to the menu
 
+    public float sleepRechargeRate = 2f; //the rate at which the player recharges sleep
+    public float sleepDepleteRate = 0.5f; //the rate at which the player depletes sleep
+    public float sleepMinTime = 1f; //the rate at which the player depletes sleep
+    public float sleepDepletedMinTime = 5f; //the rate at which the player depletes sleep
+
     [SerializeField] private float deliveryWaitTime = 1f; //the time the player needs to stay at the target to successfully deliver
     public TextMeshProUGUI scoreText; //the text that shows the score
     public int score = 0; //the score of the player
@@ -174,20 +179,22 @@ public class GameManager : MonoBehaviour
         if (SleepManager.Instance.sleepAmount <= 0 && !playerController.isAsleep)
         {
             playerController.isAsleep = true;
+            SleepManager.Instance.forcesleeping = true;
         }
         else if (SleepManager.Instance.sleepAmount >= 100 && playerController.isAsleep)
         {
             playerController.isAsleep = false;
+            SleepManager.Instance.forcesleeping = false;
         }
         // Change sleep amount based on player state
         if (playerController.isAsleep && SleepManager.Instance.sleepAmount<=100)
         {
-            SleepManager.Instance.ChangeSleepAmount(40f * Mathf.Abs(Time.deltaTime-lastTimeSleepBarUpdate));
+            SleepManager.Instance.ChangeSleepAmount(sleepRechargeRate * Time.deltaTime);
         }
         else if (!playerController.isAsleep && SleepManager.Instance.sleepAmount>=0)
         {
-            SleepManager.Instance.ChangeSleepAmount(-15f * Mathf.Abs(Time.deltaTime-lastTimeSleepBarUpdate));
+            SleepManager.Instance.ChangeSleepAmount(sleepDepleteRate * Time.deltaTime);
         }
-        lastTimeSleepBarUpdate = Time.deltaTime;
+        
     }
 }
