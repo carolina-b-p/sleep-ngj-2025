@@ -35,6 +35,10 @@ public class TargetManager : MonoBehaviour
 
     public void SelectNewTarget()
     {
+        if (targetIndicator != null)
+            Destroy(targetIndicator);
+        targetIndicator = null;
+        
         var targets = GameObject.FindGameObjectsWithTag("DeliveryLocation");
         var index = Random.Range(0, targets.Length);
         targetTransform = targets[index].transform;

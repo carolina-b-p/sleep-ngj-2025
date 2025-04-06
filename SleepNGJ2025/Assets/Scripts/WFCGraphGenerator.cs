@@ -23,6 +23,7 @@ public class WFCGraphGenerator : MonoBehaviour
     public List<GameObject> allPrefabs;
     public Dictionary<string, GameObject> PrefabReferenceMap;
     public int seed;
+    public GameObject edgePrefab;
 
     [ContextMenu("Generate WFC thing")]
     void Generate()
@@ -30,10 +31,13 @@ public class WFCGraphGenerator : MonoBehaviour
         PrefabReferenceMap = new Dictionary<string, GameObject>();
         foreach (var prefab in allPrefabs)
         {
-            PrefabReferenceMap.Add(prefab.name, prefab);
+            PrefabReferenceMap.Add(prefab.name, prefab); 
         }
 
+        DestroyImmediate(GameObject.FindGameObjectWithTag("WFCParent"));
+
         var WFCParent = new GameObject("WFCParent");
+        WFCParent.tag = "WFCParent";
         WFCParent.transform.position = Vector3.zero;
         WFCParent.transform.rotation = Quaternion.identity;
         
@@ -57,6 +61,45 @@ public class WFCGraphGenerator : MonoBehaviour
             var yPos = ((int)(setPiece.transform.position.z + 0.5)) / 25;
 
             map[(xPos, yPos)] = setPiece;
+        }
+
+        
+        map[(0, 0)] = Instantiate(edgePrefab,
+            new Vector3(0 * 25, 0, (0) * 25),
+            Quaternion.Euler(0, 0, 0), WFCParent.transform);
+        
+        
+        map[(0, mapSizeY-1)] = Instantiate(edgePrefab,
+            new Vector3(0 * 25, 0, (mapSizeY-1) * 25),
+            Quaternion.Euler(0, 0, 0), WFCParent.transform);
+        
+        map[(mapSizeX - 1, mapSizeY-1)] = Instantiate(edgePrefab,
+            new Vector3((mapSizeX - 1) * 25, 0, (mapSizeY-1) * 25),
+            Quaternion.Euler(0, 0, 0), WFCParent.transform);
+        
+        map[(mapSizeX - 1, 0)] = Instantiate(edgePrefab,
+            new Vector3((mapSizeX - 1) * 25, 0, 0 * 25),
+            Quaternion.Euler(0, 0, 0), WFCParent.transform);
+        
+        for (var xPos = 1; xPos < mapSizeX-1; xPos++)
+        {
+            map[(xPos, 0)] = Instantiate(edgePrefab,
+                new Vector3(xPos * 25, 0, 0 * 25),
+                Quaternion.Euler(0, 0, 0), WFCParent.transform);
+            
+            map[(xPos, mapSizeY-1)] = Instantiate(edgePrefab,
+                new Vector3(xPos * 25, 0, (mapSizeY-1) * 25),
+                Quaternion.Euler(0, 0, 0), WFCParent.transform);
+        }
+        for (var yPos = 1; yPos < mapSizeY-1; yPos++)
+        {
+            map[(0, yPos)] = Instantiate(edgePrefab,
+                new Vector3(0 * 25, 0, yPos * 25),
+                Quaternion.Euler(0, 0, 0), WFCParent.transform);
+            
+            map[(mapSizeX - 1, yPos)] = Instantiate(edgePrefab,
+                new Vector3((mapSizeX - 1) * 25, 0, yPos * 25),
+                Quaternion.Euler(0, 0, 0), WFCParent.transform);
         }
 
         // Load json into object
@@ -153,7 +196,17 @@ public class WFCGraphGenerator : MonoBehaviour
                 var listedCandidates = candidates.ToList();
                 if (listedCandidates.Count > 0)
                 {
-                    var chosenId = Random.Range(0, listedCandidates.Count);
+                    var totalWeightValue = listedCandidates.Sum(x =>
+                        PrefabReferenceMap[x.Item1].GetComponent<TileDescriptor>().Weight);
+                    var targetWeightValue = Random.Range(0, totalWeightValue);
+                    var chosenId = 0;
+                    while (targetWeightValue > 0)
+                    {
+                        targetWeightValue -= PrefabReferenceMap[listedCandidates[chosenId].Item1].GetComponent<TileDescriptor>().Weight;
+                        if (targetWeightValue > 0)
+                            chosenId++;
+                    }
+                    
                     var obj = Instantiate(PrefabReferenceMap[listedCandidates[chosenId].Item1],
                         new Vector3(nextX * 25, 0, nextY * 25),
                         Quaternion.Euler(0, listedCandidates[chosenId].Item2 * 90, 0), WFCParent.transform);

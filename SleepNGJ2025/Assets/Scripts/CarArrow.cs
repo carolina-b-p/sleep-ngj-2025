@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,15 @@ public class CarArrow : MonoBehaviour
         if (target != null)
         {
             // Calculate the direction to the target
-            Vector3 direction = target.position - transform.position;
+            var intermediateTarget = GraphManager.Instance.UpdatePathAndGetIntermediateTarget(target.position);
+
+            if (!intermediateTarget.Item1)
+            {
+                Debug.Log("Unreachable target detected, moving it!");
+                TargetManager.Instance.SelectNewTarget();
+            }
+
+            Vector3 direction = intermediateTarget.Item2 - transform.position;
             direction.y = 0; // Ignore vertical difference
 
             // Calculate the rotation step

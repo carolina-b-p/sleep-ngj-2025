@@ -97,4 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da03ed064d341f7bb442884e636e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChanceToLive: 0.4
+  ChanceToLive: 0.1
