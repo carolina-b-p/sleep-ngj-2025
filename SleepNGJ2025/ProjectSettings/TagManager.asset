@@ -9,6 +9,7 @@ TagManager:
   - Building
   - WFCParent
   - WFCGenerator
+  - Lamppost
   layers:
   - Default
   - TransparentFX
