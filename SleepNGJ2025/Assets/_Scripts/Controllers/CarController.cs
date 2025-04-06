@@ -36,15 +36,31 @@ public class CarController : MonoBehaviour
     public float minSteeringSpeed = 50f; // Speed of the car when it steers the most, this is the speed at which the steering angle is the minSteeringAngle
     public float brakeTorque = 3000f; // Brake torque applied to the wheels when braking
 
+    public bool isSleeping = false; // Flag to indicate if the car is asleep, this is used to make the car more stable and less likely to flip over
+
     public Vector3 centerOfMassOffset = new Vector3(0f, -0.5f, 0f); // Offset for the center of mass of the car, this is used to make the car more stable and less likely to flip over
 
     //the function called by other scripts to move the car, it takes in acceleration and brake input values which are between 0 and 1, and steering which is between -1 and 1.
     public void Move(float accelerationInput, float steeringInput, float handbrakeInput, bool isAsleep)
     {
-        // Set the acceleration, steering, and brake input values based on the input from other scripts
-        acceleration = accelerationInput; // Set the acceleration input value
-        steering = steeringInput; // Set the steering input value
-        handbrake = handbrakeInput; // Set the brake input value
+        // if the driver is asleeep the acceleration should start increasing over time towards 0.5f.
+        // furthermore the car should start to swerve randomly, maybe using a perlin noise function to get a random value between -1 and 1
+
+        if (isAsleep)
+        {
+            acceleration = Mathf.Lerp(acceleration, 1f, Time.deltaTime * 0.2f); // Increase the acceleration input towards 0.5f over time
+            steering = (Mathf.PerlinNoise(Time.time, 0) - 0.5f)*2f; // Randomly swerve the car using Perlin noise
+            handbrake = 0f; // Set handbrake input to 0 when the driver is asleep
+        }
+        else
+        {
+            // Set the acceleration, steering, and brake input values based on the input from other scripts
+            acceleration = accelerationInput; // Set the acceleration input value
+            steering = steeringInput; // Set the steering input value
+            handbrake = handbrakeInput; // Set the brake input value
+        }
+        
+        isSleeping = isAsleep;
     }
         
     public void Update(){
@@ -57,21 +73,22 @@ public class CarController : MonoBehaviour
         //we check this by using dot product between the car's velocity and the acceleration input, if the dot product is less than 0, it means the car is going in the opposite direction of the acceleration input.
         //this will make the car slow down if it is going in the opposite direction of the acceleration input.
         
-        //player input shoud deteriorate if no input is given, so we will set the acceleration input to 0 if it is less than 0.1f, this will make the car slow down if no input is given.
-        if (MathF.Abs(acceleration) < 0.1f)
+        if (!isSleeping)
         {
-            brake = .5f;
-
-        }else if (rb.velocity.magnitude > 0.25f && Vector3.Dot(rb.velocity, transform.forward * acceleration) < 0f)
-        {
-            brake = 1;
-        } else
-        {
-            brake = 0;
+            // Calculate the brake input based on the acceleration input and the car's velocity
+            if (acceleration > 0f && rb.velocity.magnitude > 0.25f && Vector3.Dot(rb.velocity.normalized, transform.forward) < 0f)
+            {
+                brake = 1f; // Apply full brake if going in the opposite direction of forward acceleration
+            }
+            else if (acceleration < 0f && rb.velocity.magnitude > 0.25f && Vector3.Dot(rb.velocity.normalized, -transform.forward) < 0f)
+            {
+                brake = 1f; // Apply full brake if going in the opposite direction of reverse acceleration
+            }
+            else
+            {
+                brake = 0f; // No brake if not going in the opposite direction of acceleration
+            }
         }
-
-        
-
 
         // Calculate the steering angle based on the steering input and the current speed of the car
         currentSpeed = rb.velocity.magnitude * 3.6f; // Convert from m/s to km/h
@@ -90,39 +107,44 @@ public class CarController : MonoBehaviour
         wheelColliders[0].steerAngle = steeringAngle;
         wheelColliders[1].steerAngle = steeringAngle;
 
-        //if the car is not accelerating in either direction, it will brake slightly to slow down.
-        if (MathF.Abs(acceleration) < 0.1f)
-        {
-            // Apply a small brake torque to all wheels to slow down the car
-            foreach (WheelCollider wheelCollider in wheelColliders)
-            {
-                wheelCollider.brakeTorque = brakeTorque * 0.1f;
-            }
-        }
-
         //reset the brake torque to 0
         foreach (WheelCollider wheelCollider in wheelColliders)
         {
             wheelCollider.brakeTorque = 0f; // No brake torque when not braking
         }
 
-        // Apply handbrake torque to all wheels if handbrake input is greater than 0
-        //otherwise, apply brake torque only to the back wheels (index 2 and 3 in the wheelColliders list)
-        if (handbrake > 0f)
+        if (!isSleeping)
         {
-            for (int i = 0; i < wheelColliders.Count; i++)
+            //if the car is not accelerating in either direction, it will brake slightly to slow down.
+            if (MathF.Abs(acceleration) < 0.1f)
             {
-                WheelCollider wheelCollider = wheelColliders[i];
-                if (i == 0 || i == 1) // Front wheels
+                // Apply a small brake torque to all wheels to slow down the car
+                foreach (WheelCollider wheelCollider in wheelColliders)
                 {
-                    wheelCollider.brakeTorque = brakeTorque * handbrake * 0.25f;
+                    wheelCollider.brakeTorque = brakeTorque * 0.1f;
                 }
-                else // Front wheels
+            }
+
+
+            // Apply handbrake torque to all wheels if handbrake input is greater than 0
+            //otherwise, apply brake torque only to the back wheels (index 2 and 3 in the wheelColliders list)
+            if (handbrake > 0f)
+            {
+                for (int i = 0; i < wheelColliders.Count; i++)
                 {
-                    wheelCollider.brakeTorque = 0f; // No brake torque for front wheels when braking
+                    WheelCollider wheelCollider = wheelColliders[i];
+                    if (i == 0 || i == 1) // Front wheels
+                    {
+                        wheelCollider.brakeTorque = brakeTorque * handbrake * 0.25f;
+                    }
+                    else // Front wheels
+                    {
+                        wheelCollider.brakeTorque = 0f; // No brake torque for front wheels when braking
+                    }
                 }
             }
         }
+
         if (brake > 0f)
         {
             acceleration = 0;
