@@ -11,4 +11,10 @@ public class GOTOSCENENUMBER : MonoBehaviour
         // Load the scene with the specified scene number
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneNumber);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        print("quit");
+    }
 }
