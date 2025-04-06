@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
                     timeAtTarget = 0;
                     OnDeliveryDone();
 
-                   // AudioManager.Instance.PlayCustomerCheerSfx();
+                    AudioManager.Instance.PlayCustomerCheerSfx();
                 }
             }
             else

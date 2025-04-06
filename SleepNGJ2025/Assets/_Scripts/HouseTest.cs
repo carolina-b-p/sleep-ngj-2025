@@ -14,7 +14,7 @@ public class HouseTest : MonoBehaviour
 
     public List<Material> materials = new List<Material>(); // List of materials to be applied to the house
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         //move the house randomly in a direction
         // Vector3 randomDirection = Random.insideUnitSphere * .5f; // Random direction within a sphere of radius 10
@@ -47,7 +47,7 @@ public class HouseTest : MonoBehaviour
 
 
         //instansiate the house floor and middle prefabs
-        //GameObject floor = Instantiate(houseFloor, transform.position, Quaternion.identity, transform); // Instantiate the house floor prefab at the position of the house with the specified offset
+        GameObject floor = Instantiate(houseFloor, transform.position, Quaternion.identity, transform); // Instantiate the house floor prefab at the position of the house with the specified offset
 
         for (int i = 0; i < Random.Range(minimumHouseHeight, maximumHouseHeight); i++) // Loop through the height of the house
         {
