@@ -14,7 +14,7 @@ public class HouseTest : MonoBehaviour
 
     public List<Material> materials = new List<Material>(); // List of materials to be applied to the house
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         //move the house randomly in a direction
         // Vector3 randomDirection = Random.insideUnitSphere * .5f; // Random direction within a sphere of radius 10
