@@ -7,6 +7,7 @@ TagManager:
   - WFCTile
   - DeliveryLocation
   - Building
+  - WFCParent
   layers:
   - Default
   - TransparentFX

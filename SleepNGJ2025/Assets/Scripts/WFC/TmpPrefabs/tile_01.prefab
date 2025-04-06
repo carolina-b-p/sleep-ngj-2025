@@ -248,6 +248,7 @@ MonoBehaviour:
   RightSocket: CRC
   DownSocket: CRC
   LeftSocket: CCC
+  Weight: 100
   DeliveryLocations:
   - {fileID: 429365945877546176}
   - {fileID: 6221548099673165743}
