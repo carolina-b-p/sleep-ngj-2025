@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
                     timeAtTarget = 0;
                     OnDeliveryDone();
 
-                    //TODO-- play delivery sound
+                    AudioManager.Instance.PlayCustomerCheerSfx();
                 }
             }
             else
