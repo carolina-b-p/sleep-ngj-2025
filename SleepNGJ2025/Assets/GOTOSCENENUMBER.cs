@@ -6,7 +6,8 @@ public class GOTOSCENENUMBER : MonoBehaviour
 {
     public int sceneNumber; // The scene number to load
     // Start is called before the first frame update
-    public GameObject startButton, quitButton, returnToMM, CreditsButton, movedCreditsPos, creditsStartPos;
+    public GameObject startButton, quitButton, returnToMM, CreditsButton, creditsText;
+
 
     public void GoTo()
     {
@@ -25,7 +26,8 @@ public class GOTOSCENENUMBER : MonoBehaviour
         startButton.SetActive(false);
         quitButton.SetActive(false);
         returnToMM.SetActive(true);
-        CreditsButton.transform.position = movedCreditsPos.transform.position;
+        creditsText.SetActive(true);
+        CreditsButton.SetActive(false);
         print("Show credits");
     }
 
@@ -33,8 +35,8 @@ public class GOTOSCENENUMBER : MonoBehaviour
     {
         startButton.SetActive(true);
         quitButton.SetActive(true);
+        creditsText.SetActive(false);
+        CreditsButton.SetActive(true);
         returnToMM.SetActive(false);
-        CreditsButton.transform.position = creditsStartPos.transform.position;
-
     }
 }
