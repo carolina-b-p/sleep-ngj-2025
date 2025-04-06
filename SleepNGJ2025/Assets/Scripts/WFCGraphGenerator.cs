@@ -26,8 +26,11 @@ public class WFCGraphGenerator : MonoBehaviour
     public GameObject edgePrefab;
 
     [ContextMenu("Generate WFC thing")]
-    void Generate()
+    public void Generate(int? maybeSeed = null)
     {
+        var mySeed = seed;
+        if (maybeSeed.HasValue)
+            seed = maybeSeed.Value;
         PrefabReferenceMap = new Dictionary<string, GameObject>();
         foreach (var prefab in allPrefabs)
         {
@@ -41,7 +44,7 @@ public class WFCGraphGenerator : MonoBehaviour
         WFCParent.transform.position = Vector3.zero;
         WFCParent.transform.rotation = Quaternion.identity;
         
-        Random.InitState(seed);
+        Random.InitState(mySeed);
         // Create structure that stores set pieces
         Dictionary<(int, int), GameObject> map = new ();
 

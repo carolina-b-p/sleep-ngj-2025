@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 public class GameManager : MonoBehaviour
 {
     public Transform player;
     public GameObject playerArrowPrefab;
+    private GameObject playerArrowInstance = null;
     private PlayerController playerController;
     private float timeAtTarget = 0; //the time the player has been at the target
     private float lastTimeSleepBarUpdate = 0; //the last time the sleep bar was updated
@@ -14,21 +16,33 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float deliveryWaitTime = 1f; //the time the player needs to stay at the target to successfully deliver
     private void Start()
     {
-        InitializeGame();
+        StartCoroutine(InitializeGame());
         lastTimeSleepBarUpdate = Time.deltaTime;
     }
 
-    private void InitializeGame()
+    IEnumerator InitializeGame()
     {
         //instantiate arrow prefab inside player gameobject
         playerController = player.GetComponent<PlayerController>();
-        GameObject playerArrow = Instantiate(playerArrowPrefab, player.position, Quaternion.identity);
-        playerArrow.transform.SetParent(player);
+        if (playerArrowInstance != null)
+            DestroyImmediate(playerArrowInstance);
+        playerArrowInstance = Instantiate(playerArrowPrefab, player.position, Quaternion.identity);
+        var WFCGenerator = GameObject.FindGameObjectWithTag("WFCGenerator");
+        WFCGenerator.GetComponent<WFCGraphGenerator>().Generate(UnityEngine.Random.Range(int.MinValue, int.MaxValue));
+        yield return null;
+        GraphManager.Instance.BuildGraph();
+        yield return null;
+        playerArrowInstance.transform.SetParent(player);
         TargetManager.Instance.SelectNewTarget();
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R) && Input.GetKeyDown(KeyCode.T))
+        {
+            Start();
+        }
+        
         if(TargetManager.Instance.targetTransform != null)
         {
             //check if player is within range of the target

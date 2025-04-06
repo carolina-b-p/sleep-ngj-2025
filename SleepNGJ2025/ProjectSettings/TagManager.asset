@@ -8,6 +8,7 @@ TagManager:
   - DeliveryLocation
   - Building
   - WFCParent
+  - WFCGenerator
   layers:
   - Default
   - TransparentFX
