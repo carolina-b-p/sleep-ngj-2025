@@ -7,10 +7,10 @@ public class AudioManager : MonoBehaviour
 {
     
     [SerializeField] private AudioSource _sfxSource;
-    [SerializeField] private AudioSource _musicSource;
 
-    [SerializeField] private SfxScriptableObjects _drivingSfx;
+    [SerializeField] private AudioSource _customerSfxSource;
 
+    
 
     public static AudioManager Instance {get; private set;}
 
