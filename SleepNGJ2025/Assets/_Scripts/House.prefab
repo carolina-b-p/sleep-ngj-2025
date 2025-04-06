@@ -122,8 +122,8 @@ MonoBehaviour:
   houseFloor: {fileID: 5433848017854901530, guid: 3614f3846dd3d404c9c26ece71c8cbef, type: 3}
   houseMiddle: {fileID: 4179423251649829287, guid: 169a0039cbe877542afdca8707f79d13, type: 3}
   flooroffset: {x: 0, y: 4, z: 0}
-  minimumHouseHeight: 1
-  maximumHouseHeight: 20
+  minimumHouseHeight: 2
+  maximumHouseHeight: 5
   materials:
   - {fileID: 2100000, guid: bd3d4fe845c40c54ab3043705b3483fa, type: 2}
   - {fileID: 2100000, guid: ea476f5016bfc4a4eb445b1a68454271, type: 2}
@@ -183,8 +183,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5433848017854901530, guid: 3614f3846dd3d404c9c26ece71c8cbef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6537678341725816793}
   m_SourcePrefab: {fileID: 100100000, guid: 3614f3846dd3d404c9c26ece71c8cbef, type: 3}
+--- !u!1 &2863139894624964180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5433848017854901530, guid: 3614f3846dd3d404c9c26ece71c8cbef, type: 3}
+  m_PrefabInstance: {fileID: 7841626129578156878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6537678341725816793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2863139894624964180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74da03ed064d341f7bb442884e636e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChanceToLive: 0
 --- !u!4 &3238152161786238190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4621598489833633696, guid: 3614f3846dd3d404c9c26ece71c8cbef, type: 3}

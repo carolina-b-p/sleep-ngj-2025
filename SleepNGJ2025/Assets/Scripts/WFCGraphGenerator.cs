@@ -30,7 +30,7 @@ public class WFCGraphGenerator : MonoBehaviour
     {
         var mySeed = seed;
         if (maybeSeed.HasValue)
-            seed = maybeSeed.Value;
+            mySeed = maybeSeed.Value;
         PrefabReferenceMap = new Dictionary<string, GameObject>();
         foreach (var prefab in allPrefabs)
         {
