@@ -10,6 +10,8 @@ public class SleepManager : MonoBehaviour
 {
     public Image sleepBarLevel;
     public float sleepAmount = 100f;
+
+    public bool forcesleeping = false;
     public List<Color> sleepColors = new List<Color>();
     
     //singleton instance

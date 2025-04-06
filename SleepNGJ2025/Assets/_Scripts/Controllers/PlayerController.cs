@@ -27,14 +27,21 @@ public class PlayerController : MonoBehaviour
         steeringInput = Input.GetAxis("Horizontal"); 
         handbrakeInput = Input.GetAxis("Brake"); 
         // action button input to check while pressed and onrelease
-        if (Input.GetButton("Fire1") && Input.GetButton("Fire2"))
+        if (Input.GetButtonDown("Sleep"))
         {
-            Debug.Log("Sleep buttons pressed");
             isAsleep = true;
         }
-        else if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire2"))
+        else if (isAsleep &&
+        (
+        Input.GetButtonUp("Sleep")
+        ||
+        !SleepManager.Instance.forcesleeping && (Input.GetButtonUp("Sleep"))
+        ||
+        (SleepManager.Instance.forcesleeping && Input.GetButtonUp("Sleep") && SleepManager.Instance.sleepAmount > 50
+        ||
+        (SleepManager.Instance.sleepAmount > 99 && !Input.GetButton("Sleep"))
+        )))
         {
-            Debug.Log("At least one Sleep button released");
             isAsleep = false;
         }
 

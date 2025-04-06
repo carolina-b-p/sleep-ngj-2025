@@ -46,3 +46,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerArrowPrefab: {fileID: 2066639665556175388, guid: cc7351aac18cd4784963d74cab4d156d, type: 3}
+  deliveryDeadlineText: {fileID: 0}
+  deliveryTime: 0
+  deadlineStart: 120
+  deadline: 120
+  deadlineChange: 5
+  gameover: 0
+  deadlineclose: 0
+  deadlineCloseTime: 30
+  MenuButton: {fileID: 0}
+  sleepRechargeRate: 10
+  sleepDepleteRate: -5
+  sleepMinTime: 1
+  sleepDepletedMinTime: 5
+  deliveryWaitTime: 1
+  scoreText: {fileID: 0}
+  score: 0
