@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,13 @@ public class GameManager : MonoBehaviour
     private PlayerController playerController;
     private float timeAtTarget = 0; //the time the player has been at the target
     private float lastTimeSleepBarUpdate = 0; //the last time the sleep bar was updated
+
+    public TextMeshProUGUI deliveryDeadlineText; //the text that shows the delivery deadline
+
+    public float deliveryTime = 0f; //the time the player has to deliver the package
+    public float deadlineStart = 120f;
+    public float deadline = 120f; //the time the player has to deliver the package
+    public float deadlineChange  = 0.95f; //the time the player has to deliver the package
     
     [SerializeField] private float deliveryWaitTime = 1f; //the time the player needs to stay at the target to successfully deliver
     private void Start()
@@ -25,6 +33,7 @@ public class GameManager : MonoBehaviour
         GameObject playerArrow = Instantiate(playerArrowPrefab, player.position, Quaternion.identity);
         playerArrow.transform.SetParent(player);
         TargetManager.Instance.SelectNewTarget();
+        deliveryTime = deadline;
     }
 
     private void Update()
